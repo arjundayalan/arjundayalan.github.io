@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Arjun D â Finance Director | FP&A | IFRS | Renewables & SaaS</title>
+<style>
+  :root {
+    --navy: #1B3A6B;
+    --steel: #2A6099;
+    --gold: #C8922A;
+    --light: #EDF3FA;
+    --gray: #4A4A4A;
+    --lgray: #F5F8FC;
+    --white: #FFFFFF;
+    --black: #1C1C1C;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--black); background: var(--white); line-height: 1.65; }
+
+  /* NAV */
+  nav { background: var(--navy); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  nav .logo { color: var(--white); font-weight: 700; font-size: 1.1rem; letter-spacing: 1px; }
+  nav a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.88rem; margin-left: 28px; transition: color .2s; }
+  nav a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, var(--navy) 0%, #0d2347 60%, #1a3c6e 100%); color: var(--white); padding: 90px 40px 70px; text-align: center; }
+  .hero h1 { font-size: 3rem; font-weight: 800; letter-spacing: 2px; margin-bottom: 12px; }
+  .hero .subtitle { font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 28px; }
+  .hero .tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 36px; }
+  .hero .tag { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 5px 16px; font-size: 0.82rem; color: rgba(255,255,255,0.9); }
+  .hero .contact-bar { font-size: 0.88rem; color: rgba(255,255,255,0.7); margin-bottom: 36px; }
+  .hero .contact-bar a { color: #8fb8e8; text-decoration: none; }
+  .hero .contact-bar span { margin: 0 12px; opacity: 0.4; }
+  .hero .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 12px 28px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all .2s; cursor: pointer; }
+  .btn-primary { background: var(--gold); color: var(--white); border: 2px solid var(--gold); }
+  .btn-primary:hover { background: #b07820; border-color: #b07820; }
+  .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.5); }
+  .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
+
+  /* METRICS STRIP */
+  .metrics { background: var(--light); border-top: 4px solid var(--gold); padding: 40px; display: flex; justify-content: center; gap: 0; flex-wrap: wrap; }
+  .metric { text-align: center; padding: 16px 40px; border-right: 1px solid #C8D8ED; }
+  .metric:last-child { border-right: none; }
+  .metric .num { font-size: 2.2rem; font-weight: 800; color: var(--navy); display: block; }
+  .metric .lbl { font-size: 0.8rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* SECTION */
+  section { padding: 70px 40px; max-width: 960px; margin: 0 auto; }
+  .section-head { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); font-weight: 700; margin-bottom: 8px; }
+  h2 { font-size: 1.9rem; color: var(--navy); margin-bottom: 32px; border-bottom: 3px solid var(--light); padding-bottom: 12px; }
+
+  /* SUMMARY */
+  .summary p { font-size: 1.05rem; color: var(--gray); line-height: 1.8; }
+
+  /* ACHIEVEMENTS */
+  .achievements { background: var(--lgray); padding: 70px 40px; }
+  .ach-grid { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .ach-card { background: var(--white); border-radius: 8px; padding: 24px; border-left: 4px solid var(--steel); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .ach-card .icon { font-size: 1.5rem; margin-bottom: 10px; }
+  .ach-card h4 { color: var(--navy); font-size: 1rem; margin-bottom: 6px; }
+  .ach-card p { font-size: 0.88rem; color: var(--gray); }
+
+  /* EXPERIENCE */
+  .exp-item { border-left: 3px solid var(--steel); padding-left: 24px; margin-bottom: 40px; position: relative; }
+  .exp-item::before { content: ''; position: absolute; left: -7px; top: 4px; width: 11px; height: 11px; background: var(--steel); border-radius: 50%; }
+  .exp-role { font-size: 1.05rem; font-weight: 700; color: var(--navy); }
+  .exp-company { font-size: 0.95rem; color: var(--steel); font-weight: 600; }
+  .exp-meta { font-size: 0.82rem; color: var(--gray); margin: 4px 0 12px; }
+  .exp-desc { font-size: 0.9rem; color: var(--gray); }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .exp-tag { background: var(--light); color: var(--navy); border-radius: 4px; padding: 3px 10px; font-size: 0.78rem; font-weight: 600; }
+
+  /* COMPETENCIES */
+  .comp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+  .comp-item { background: var(--light); border-radius: 6px; padding: 10px 16px; font-size: 0.88rem; color: var(--navy); font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  .comp-item::before { content: 'âª'; color: var(--steel); font-size: 1.1rem; }
+
+  /* CERTIFICATIONS */
+  .cert-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .cert-item { background: var(--white); border: 1px solid #C8D8ED; border-radius: 8px; padding: 16px 20px; display: flex; align-items: flex-start; gap: 12px; }
+  .cert-badge { background: var(--navy); color: var(--white); border-radius: 6px; padding: 8px 10px; font-size: 0.7rem; font-weight: 700; text-align: center; min-width: 54px; line-height: 1.3; }
+  .cert-info h4 { font-size: 0.9rem; color: var(--navy); margin-bottom: 3px; }
+  .cert-info p { font-size: 0.8rem; color: var(--gray); }
+
+  /* TECH SKILLS */
+  .skill-row { margin-bottom: 16px; }
+  .skill-label { font-size: 0.82rem; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .skill-tag { background: var(--lgray); border: 1px solid #C8D8ED; border-radius: 4px; padding: 4px 12px; font-size: 0.82rem; color: var(--black); }
+
+  /* LEARNING */
+  .learn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .learn-card { background: var(--white); border: 1px solid #C8D8ED; border-radius: 8px; padding: 20px; text-decoration: none; transition: all .2s; display: block; }
+  .learn-card:hover { border-color: var(--steel); box-shadow: 0 4px 12px rgba(42,96,153,0.12); transform: translateY(-2px); }
+  .learn-card h4 { color: var(--navy); font-size: 0.95rem; margin-bottom: 6px; }
+  .learn-card p { color: var(--gray); font-size: 0.82rem; }
+  .learn-card .free-badge { display: inline-block; background: #D4EDDA; color: #1B6B2F; border-radius: 4px; padding: 2px 8px; font-size: 0.72rem; font-weight: 700; margin-bottom: 8px; }
+
+  /* CTA */
+  .cta-section { background: var(--navy); color: var(--white); text-align: center; padding: 70px 40px; }
+  .cta-section h2 { color: var(--white); border-bottom-color: rgba(255,255,255,0.15); }
+  .cta-section p { color: rgba(255,255,255,0.8); margin-bottom: 32px; font-size: 1rem; }
+  .cta-section .btn-primary { font-size: 1rem; padding: 14px 36px; }
+
+  /* FOOTER */
+  footer { background: #0d1f3a; color: rgba(255,255,255,0.5); text-align: center; padding: 24px; font-size: 0.8rem; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 2rem; }
+    .metric { padding: 12px 20px; }
+    .metric .num { font-size: 1.6rem; }
+    nav { padding: 12px 20px; }
+    section { padding: 50px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="logo">ARJUN D</span>
+  <div>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#learning">Learning</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>ARJUN D</h1>
+  <div class="subtitle">Finance Head &nbsp;|&nbsp; FP&A &amp; Strategic Finance &nbsp;|&nbsp; IFRS &amp; Group Consolidation &nbsp;|&nbsp; M&amp;A Due Diligence &nbsp;|&nbsp; Renewables &amp; SaaS</div>
+  <div class="tags">
+    <span class="tag">10+ Years Experience</span>
+    <span class="tag">ACCA DipIFR (UK)</span>
+    <span class="tag">Renewable Energy</span>
+    <span class="tag">Cross-Border Finance</span>
+    <span class="tag">ERP Transformation</span>
+    <span class="tag">100% Remote Ready</span>
+    <span class="tag">Open to Global Roles</span>
+  </div>
+  <div class="contact-bar">
+    <a href="mailto:arjunaj28@hotmail.com">arjunaj28@hotmail.com</a>
+    <span>|</span>
+    +91 9980210500
+    <span>|</span>
+    <a href="https://www.linkedin.com/in/arjundayalan" target="_blank">linkedin.com/in/arjundayalan</a>
+    <span>|</span>
+    Bengaluru, India
+  </div>
+  <div class="cta-group">
+    <a class="btn btn-primary" href="Arjun_D_Resume_2026.docx" download>Download Resume</a>
+    <a class="btn btn-outline" href="https://www.linkedin.com/in/arjundayalan" target="_blank">View LinkedIn Profile</a>
+    <a class="btn btn-outline" href="mailto:arjunaj28@hotmail.com">Get in Touch</a>
+  </div>
+</div>
+
+<!-- METRICS -->
+<div class="metrics">
+  <div class="metric"><span class="num">10+</span><span class="lbl">Years Finance Leadership</span></div>
+  <div class="metric"><span class="num">â¹600Cr+</span><span class="lbl">Portfolio Managed (~USD $72M)</span></div>
+  <div class="metric"><span class="num">60+</span><span class="lbl">Team Members Led</span></div>
+  <div class="metric"><span class="num">6</span><span class="lbl">Group Entities Governed</span></div>
+  <div class="metric"><span class="num">90â30</span><span class="lbl">Days DSO Improvement</span></div>
+  <div class="metric"><span class="num">2</span><span class="lbl">ERP Implementations</span></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="summary">
+  <div class="section-head">Professional Summary</div>
+  <h2>About Me</h2>
+  <p>Results-driven Finance Head with 10+ years of cross-industry leadership across <strong>renewable energy</strong>, retail manufacturing, and transaction advisory. I specialise in IFRS group consolidation, buy-side and sell-side M&A due diligence, SPV-based project financing, and end-to-end ERP transformation.</p>
+  <br/>
+  <p>I have a proven track record of owning full finance functions for global and multi-entity businesses â most recently collaborating directly with a <strong>France-headquartered global leadership team</strong> at Ciel Et Terre Solar, delivering IFRS-aligned group reporting, M&A advisory, and cross-border treasury management in a fully remote structure. I hold the <strong>ACCA DipIFR</strong> (UK) â the IFRS qualification recognised across all 27 EU member states.</p>
+  <br/>
+  <p>I am actively seeking <strong>100% remote Finance Director, Head of FP&amp;A, or Finance Business Partner roles</strong> globally â particularly in SaaS, renewable energy/cleantech, fintech, or PE-backed growth businesses. Based in Bengaluru, India. Open to EOR arrangements.</p>
+</section>
+
+<!-- KEY ACHIEVEMENTS -->
+<div class="achievements" id="achievements">
+  <div style="max-width:960px;margin:0 auto;">
+    <div class="section-head" style="text-align:center">Key Achievements</div>
+    <h2 style="text-align:center;border:none;padding:0;margin-bottom:32px">Quantified Impact</h2>
+    <div class="ach-grid">
+      <div class="ach-card"><div class="icon">ð</div><h4>DSO: 90 â 30 Days</h4><p>Improved Days Sales Outstanding by 67% through structured receivables management and process redesign at Ciel Et Terre Solar India.</p></div>
+      <div class="ach-card"><div class="icon">ð°</div><h4>Borrowing Cost: 10.25% â 8.5%</h4><p>Reduced cost of borrowing by 170bps through treasury optimisation, lender renegotiation, and credit limit doubling.</p></div>
+      <div class="ach-card"><div class="icon">ð</div><h4>NRR Improved by 25%</h4><p>Drove Net Revenue Retention improvement through disciplined cash flow planning and working capital strategy at Ciel Et Terre Solar.</p></div>
+      <div class="ach-card"><div class="icon">ð¦</div><h4>Near-Zero Debt on â¹600Cr+ Balance Sheet</h4><p>Eliminated material debt at Cotton World Group through disciplined working capital management, receivables optimisation, and interest cost reduction.</p></div>
+      <div class="ach-card"><div class="icon">ð¥</div><h4>Team of 60+ Scaled & Led</h4><p>Built and managed a high-performing finance and admin team, introducing right-skilling frameworks that reduced task turnaround time by 20%.</p></div>
+      <div class="ach-card"><div class="icon">ð</div><h4>2 ERP Implementations</h4><p>Led end-to-end MS Dynamics 365 and Textile Manufacturing ERP deployments integrating finance, HR, production, and procurement from zero.</p></div>
+      <div class="ach-card"><div class="icon">ð</div><h4>First-Ever Royalty Repatriation</h4><p>Successfully repatriated royalties to French HQ for the first time since subsidiary inception; closed customs cases with nil duty payment.</p></div>
+      <div class="ach-card"><div class="icon">ð</div><h4>M&A Due Diligence Across Asset Classes</h4><p>Led buy-side and sell-side financial due diligence for share transfers, slump sales, acquisitions, SPV financing, and land lease transactions.</p></div>
+      <div class="ach-card"><div class="icon">ð</div><h4>IFRS Group Consolidation</h4><p>Delivered IFRS-aligned group consolidation for France HQ across India-France cross-border operations throughout tenure at Ciel Et Terre Solar.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-head">Career History</div>
+  <h2>Work Experience</h2>
+
+  <div class="exp-item">
+    <div class="exp-role">Head of Finance &amp; Compliance &nbsp;|&nbsp; Global AGM â Finance &amp; Accounts</div>
+    <div class="exp-company">Ciel Et Terre Solar Pvt. Ltd.</div>
+    <div class="exp-meta">January 2024 â March 2026 &nbsp;Â·&nbsp; Bengaluru, India (Remote, France HQ)</div>
+    <div class="exp-desc">Led end-to-end finance function for India operations of a France-headquartered global floating solar technology company. Delivered IFRS group consolidation, SPV-based project financing, M&A due diligence, and cross-border treasury management in a fully remote cross-timezone structure. DSO improved 90â30 days; borrowing costs reduced 10.25%â8.5%; credit limits doubled; royalties repatriated to France for first time.</div>
+    <div class="exp-tags">
+      <span class="exp-tag">IFRS Consolidation</span><span class="exp-tag">M&amp;A Due Diligence</span><span class="exp-tag">SPV Project Finance</span><span class="exp-tag">FP&amp;A</span><span class="exp-tag">ERP Implementation</span><span class="exp-tag">Renewable Energy</span><span class="exp-tag">Cross-Border Finance</span>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-role">Accounts &amp; Finance Head</div>
+    <div class="exp-company">Cotton World Group</div>
+    <div class="exp-meta">November 2020 â December 2023 &nbsp;Â·&nbsp; Bengaluru, India</div>
+    <div class="exp-desc">De facto CFO for a â¹600Cr+ (~USD $72M) multi-entity retail and textile manufacturing conglomerate â 6 group entities, 60+ member finance team. Led full ERP transformation, achieved near-zero debt, delivered CFO-grade MIS and board reporting, and executed complex buy-side and sell-side M&A due diligence across share transfers, slump sales, and acquisitions.</div>
+    <div class="exp-tags">
+      <span class="exp-tag">Multi-Entity CFO</span><span class="exp-tag">ERP Transformation</span><span class="exp-tag">Treasury Management</span><span class="exp-tag">Team Leadership (60+)</span><span class="exp-tag">M&amp;A Due Diligence</span><span class="exp-tag">Board Reporting</span>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-role">Finance &amp; Transaction Advisory Consultant</div>
+    <div class="exp-company">N.C.S. Raghavan &amp; Co., Chartered Accountants</div>
+    <div class="exp-meta">August 2018 â October 2020 &nbsp;Â·&nbsp; Bengaluru, India</div>
+    <div class="exp-desc">Partnered with Senior Partner on end-to-end transaction advisory, legal structuring, and multi-law compliance for corporate and HNI clients. Drafted ISDA agreements, CSA swaps, Share Transfer Agreements, Joint Development Agreements, and regulatory opinions. Presented at NLSIU and ICAI forums on RERA and real estate tax implications.</div>
+    <div class="exp-tags">
+      <span class="exp-tag">Transaction Advisory</span><span class="exp-tag">Legal Documentation</span><span class="exp-tag">Capital Gains Tax</span><span class="exp-tag">RERA</span><span class="exp-tag">ISDA / CSA</span>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETENCIES -->
+<div style="background:var(--lgray);padding:70px 40px;">
+  <div style="max-width:960px;margin:0 auto;">
+    <div class="section-head">What I Do</div>
+    <h2>Core Competencies</h2>
+    <div class="comp-grid">
+      <div class="comp-item">Financial Planning &amp; Analysis (FP&amp;A)</div>
+      <div class="comp-item">IFRS Consolidation &amp; Reporting</div>
+      <div class="comp-item">M&amp;A Due Diligence (Buy &amp; Sell-Side)</div>
+      <div class="comp-item">Strategic Finance Leadership</div>
+      <div class="comp-item">Cross-Border Financial Management</div>
+      <div class="comp-item">Capital Structuring &amp; Project Finance</div>
+      <div class="comp-item">ERP Implementation &amp; Transformation</div>
+      <div class="comp-item">Treasury &amp; Working Capital Optimisation</div>
+      <div class="comp-item">Budgeting, Forecasting &amp; Scenario Modelling</div>
+      <div class="comp-item">KPI Dashboards &amp; Board Reporting</div>
+      <div class="comp-item">Transaction Structuring &amp; Valuation</div>
+      <div class="comp-item">Regulatory &amp; Multi-Jurisdiction Compliance</div>
+      <div class="comp-item">Business Analytics &amp; Data-Driven Decisions</div>
+      <div class="comp-item">Stakeholder &amp; Investor Relations</div>
+      <div class="comp-item">Team Leadership &amp; Finance Transformation</div>
+    </div>
+  </div>
+</div>
+
+<!-- TECH SKILLS -->
+<section id="skills">
+  <div class="section-head">Technical Toolkit</div>
+  <h2>Technical Skills</h2>
+  <div class="skill-row">
+    <div class="skill-label">ERP &amp; Accounting Systems</div>
+    <div class="skill-tags">
+      <span class="skill-tag">Microsoft Dynamics 365</span><span class="skill-tag">Oracle NetSuite</span><span class="skill-tag">SAP (Ledger Reviews)</span><span class="skill-tag">Tally Prime</span><span class="skill-tag">Xero (L2 Certified)</span><span class="skill-tag">QuickBooks</span><span class="skill-tag">Zoho Books</span><span class="skill-tag">IDS (Hotel)</span>
+    </div>
+  </div>
+  <br/>
+  <div class="skill-row">
+    <div class="skill-label">Analytics &amp; Reporting</div>
+    <div class="skill-tags">
+      <span class="skill-tag">Microsoft Excel (Advanced)</span><span class="skill-tag">Power BI</span><span class="skill-tag">Tableau</span><span class="skill-tag">R Programming</span><span class="skill-tag">KPI Dashboard Design</span><span class="skill-tag">MIS &amp; Management Accounts</span>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<div style="background:var(--lgray);padding:70px 40px;">
+  <div style="max-width:960px;margin:0 auto;" id="certifications">
+    <div class="section-head">Credentials</div>
+    <h2>Education &amp; Certifications</h2>
+    <div class="cert-list">
+      <div class="cert-item"><div class="cert-badge">ACCA<br/>UK</div><div class="cert-info"><h4>DipIFR â Diploma in International Financial Reporting</h4><p>ACCA, United Kingdom &nbsp;Â·&nbsp; 2018</p></div></div>
+      <div class="cert-item"><div class="cert-badge">PwC<br/>2025</div><div class="cert-info"><h4>Professional Certification: Financial Modelling &amp; Analysis</h4><p>PwC India Academy &amp; upGrad &nbsp;Â·&nbsp; 2025</p></div></div>
+      <div class="cert-item"><div class="cert-badge">IIT<br/>R</div><div class="cert-info"><h4>Business Analytics for Strategic Decision Making</h4><p>IIT Roorkee &nbsp;Â·&nbsp; 2024</p></div></div>
+      <div class="cert-item"><div class="cert-badge">Xero<br/>L2</div><div class="cert-info"><h4>Xero Certified Professional (Level 2)</h4><p>Xero &nbsp;Â·&nbsp; 2026</p></div></div>
+      <div class="cert-item"><div class="cert-badge">ICAI</div><div class="cert-info"><h4>ATC â Accounting Technician</h4><p>Institute of Chartered Accountants of India</p></div></div>
+      <div class="cert-item"><div class="cert-badge">B.Com<br/>2014</div><div class="cert-info"><h4>B.Com (DGM) â 75.67%</h4><p>Jain University &nbsp;Â·&nbsp; 2014</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- LEARNING RESOURCES -->
+<section id="learning">
+  <div class="section-head">Continuous Development</div>
+  <h2>Free Learning Resources I'm Using</h2>
+  <p style="color:var(--gray);margin-bottom:28px;font-size:0.95rem;">Resources I am actively using to build skills for remote finance roles in SaaS, cleantech, and global businesses â all free or open-access.</p>
+  <div class="learn-grid">
+    <a class="learn-card" href="https://powerbi.microsoft.com/en-us/learning/" target="_blank"><span class="free-badge">FREE</span><h4>Power BI â Microsoft Learning</h4><p>Official Microsoft learning path for Power BI â from fundamentals to advanced dashboards and DAX.</p></a>
+    <a class="learn-card" href="https://www.youtube.com/@AnaplanInc/playlists" target="_blank"><span class="free-badge">FREE</span><h4>Anaplan â Official YouTube Channel</h4><p>Anaplan product tutorials and FP&amp;A use-case walkthroughs for financial planning professionals.</p></a>
+    <a class="learn-card" href="https://corporatefinanceinstitute.com/resources/" target="_blank"><span class="free-badge">FREE</span><h4>CFI â Financial Modelling Resources</h4><p>Corporate Finance Institute free templates, guides, and articles on financial analysis and modelling.</p></a>
+    <a class="learn-card" href="https://www.globalreporting.org/how-to-use-the-gri-standards/resource-center/" target="_blank"><span class="free-badge">FREE</span><h4>GRI Standards â ESG &amp; CSRD Reporting</h4><p>Global Reporting Initiative resource centre for sustainability reporting, CSRD, and EU taxonomy alignment.</p></a>
+    <a class="learn-card" href="https://sqlzoo.net/wiki/SQL_Tutorial" target="_blank"><span class="free-badge">FREE</span><h4>SQLZoo â SQL for Finance</h4><p>Interactive SQL tutorials for data querying, financial data analysis, and database-driven reporting.</p></a>
+    <a class="learn-card" href="https://www.netsuite.com/portal/services/training.shtml" target="_blank"><span class="free-badge">FREE INTRO</span><h4>Oracle NetSuite â Training &amp; Education</h4><p>Oracle NetSuite's official training resources for finance professionals using NetSuite ERP.</p></a>
+    <a class="learn-card" href="https://central.xero.com/0/learning" target="_blank"><span class="free-badge">FREE</span><h4>Xero Learning Centre</h4><p>Official Xero certification learning path â already L2 certified, continuing to L3 and advisory skills.</p></a>
+    <a class="learn-card" href="https://www.coursera.org/learn/wharton-accounting" target="_blank"><span class="free-badge">AUDIT FREE</span><h4>Wharton â Introduction to Financial Accounting</h4><p>Ivy League accounting fundamentals â auditable for free on Coursera to strengthen US/global GAAP knowledge.</p></a>
+  </div>
+</section>
+
+<!-- CONTACT / CTA -->
+<div class="cta-section" id="contact">
+  <div style="max-width:700px;margin:0 auto;">
+    <div class="section-head" style="color:rgba(255,255,255,0.6)">Get In Touch</div>
+    <h2 style="color:var(--white);border-bottom:2px solid rgba(255,255,255,0.15);padding-bottom:12px;margin-bottom:24px">Open to Remote Finance Leadership Roles</h2>
+    <p>I am actively seeking 100% remote Finance Director, Head of FP&A, Finance Business Partner, or Group Controller roles â particularly in SaaS, renewable energy/cleantech, fintech, or PE-backed growth businesses. Based in Bengaluru, India. Open to EOR or contractor arrangements globally.</p>
+    <div class="cta-group" style="margin-top:32px">
+      <a class="btn btn-primary" href="mailto:arjunaj28@hotmail.com?subject=Remote Finance Role Opportunity">Email Me</a>
+      <a class="btn btn-outline" href="https://www.linkedin.com/in/arjundayalan" target="_blank">Connect on LinkedIn</a>
+      <a class="btn btn-outline" href="Arjun_D_Resume_2026.docx" download>Download Resume</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Â© 2026 Arjun D &nbsp;Â·&nbsp; Finance Head | ACCA DipIFR | FP&A | IFRS | Renewables &amp; SaaS &nbsp;Â·&nbsp; Bengaluru, India &nbsp;Â·&nbsp; <a href="mailto:arjunaj28@hotmail.com" style="color:rgba(255,255,255,0.5)">arjunaj28@hotmail.com</a></p>
+  <p style="margin-top:6px;font-size:0.72rem;">Hosted free on GitHub Pages &nbsp;Â·&nbsp; Built to showcase professional profile for global remote roles</p>
+</footer>
+
+</body>
+</html>
